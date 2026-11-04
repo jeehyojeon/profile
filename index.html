@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jeehyo Jeon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <style>
-  :root { --accent: oklch(0.53 0.16 32); --ink: oklch(0.21 0.008 60); --mid: oklch(0.48 0.006 60); --paper: oklch(0.985 0.004 85); --rule: oklch(0.88 0.006 70); }
+  :root { --accent: oklch(0.53 0.16 32); --ink: oklch(0.20 0.010 60); --mid: oklch(0.41 0.008 60); --paper: oklch(0.975 0.012 85); --rule: oklch(0.85 0.012 75); }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Instrument Sans", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
@@ -38,8 +31,8 @@
     section > div > div[style*="108px"] { grid-template-columns: 1fr !important; gap: 5px !important; }
   }
 </style>
-</helmet>
-
+</head>
+<body>
 <div style="max-width: 1000px; margin: 0 auto; padding: 88px 40px 120px">
 
   
@@ -50,13 +43,13 @@
         <h1 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1">Jeehyo Jeon</h1>
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mid)">M.S. Student &nbsp;·&nbsp; Korea University</div>
       </div>
-      <p style="margin: 0; font-size: 25px; line-height: 1.34; letter-spacing: -0.01em; max-width: 24ch; font-weight: 400"><span style="color: var(--accent);">Real problems, real disagreement.</span> Most models learn from consensus — I study where it breaks down.</p>
-    </div><img src="./portrait.png" alt="Jeehyo Jeon" style="width: 100%; height: auto; aspect-ratio: 900 / 1350; object-fit: cover; border-radius: 2px; display: block">
+      <p style="margin: 0; font-size: 25px; line-height: 1.34; letter-spacing: -0.01em; max-width: 24ch; font-weight: 400"><span style="color: var(--accent);">Brilliant on benchmarks. Lost in the real world.</span> I study why — through the eyes of the experts who use it.</p>
+    </div><img src="./portrait.jpg" alt="Jeehyo Jeon" style="width: 100%; height: auto; aspect-ratio: 413 / 531; object-fit: contain; border-radius: 2px; display: block">
     
   </header><section style="display: grid; grid-template-columns: 168px 1fr; gap: 48px; padding: 40px 0; border-bottom: 1px solid var(--rule)">
     <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid)">About</h2>
     <div style="display: flex; flex-direction: column; gap: 16px; max-width: 62ch">
-      <p style="margin: 0; font-size: 17px; line-height: 1.62; color: var(--ink)">I work on real-world medical imaging problems, where the ground truth is rarely as clean as benchmarks assume. My focus is disagreement in clinical practice: two experts labeling the same cell differently, and the same model behaving differently on two microscopes. I treat both as signals rather than noise, and build models that know not only what to predict, but also when they are uncertain and when to defer to human expertise.</p>
+      <p style="margin: 0; font-size: 17px; line-height: 1.62; color: var(--ink)">AI has come so far — so why can't it be put to work right away on task-specific problems? I study the gap between theory and practice by looking at each problem the way domain experts do — so the AI I build actually helps them.</p>
       
     </div>
   </section>
@@ -66,25 +59,30 @@
     <div style="display: flex; flex-direction: column; gap: 34px">
 
       <div style="display: flex; flex-direction: column; gap: 6px">
-        <h3 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.01em">Disagreement in clinical AI</h3>
-        <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--mid)">Clinical labels disagree in two ways.<br class="keep">I study both.</p>
+        <h3 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.01em">Closing the gap</h3>
       </div>
 
       <div style="display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start">
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 500">1</span>
         <div style="display: flex; flex-direction: column; gap: 12px">
-          <h4 style="margin: 0; font-size: 17.5px; font-weight: 600; letter-spacing: -0.005em">Annotator disagreement — on the same object</h4>
-          <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--mid); max-width: 60ch">Majority voting hides the fact that experts saw the same image and came to different conclusions. I train on the full distribution of expert opinions, so models can identify contested cases and give them extra attention. Developed with a partner fertility clinic, the work spans the entire pipeline from data collection to clinical reader evaluation.</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">annotator disagreement</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">visual ambiguity</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">clinical deployment</span></div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid)">Task-specific · Clinical AI</span>
+            <h4 style="margin: 0; font-size: 17.5px; font-weight: 600; letter-spacing: -0.005em">Annotator disagreement</h4>
+          </div>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--mid); max-width: 60ch">Experts often disagree on the same image. Working with a partner fertility clinic, I train models on the full spread of expert opinions so they can flag contested cases and defer to experts.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">annotator disagreement</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">visual ambiguity</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">expert-in-the-loop</span></div>
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start">
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 500">2</span>
         <div style="display: flex; flex-direction: column; gap: 12px">
-          <h4 style="margin: 0; font-size: 17.5px; font-weight: 600; letter-spacing: -0.005em">Domain shift — on the same task</h4>
-          <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--mid); max-width: 60ch">A model trained on one microscope rarely survives the next one; the disagreement here is between acquisition conditions rather than between people. My current work explores label-free vessel imaging and asks whether uncertainty can signal when a model has left its familiar domain.</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">domain shift</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">label-free imaging</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">uncertainty</span></div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid)">Methodology</span>
+            <h4 style="margin: 0; font-size: 17.5px; font-weight: 600; letter-spacing: -0.005em">Annotation refinement</h4>
+          </div>
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--mid); max-width: 60ch">When a guideline leaves labels undetermined, experts fill the gaps differently. I use VLM judges to check labels against a rubric, hand unresolved cases to experts, and refine the rubric each round.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">annotation refinement</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">VLM-as-a-judge</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">human-AI collaboration</span></div>
         </div>
       </div>
 
@@ -93,8 +91,8 @@
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid)">Application</span>
           <h4 style="margin: 0; font-size: 17.5px; font-weight: 600; letter-spacing: -0.005em">Reproductive health</h4>
         </div>
-        <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--mid); max-width: 60ch">A clinically important area that receives relatively little attention in machine learning. Using topic modeling, I study the women's reproductive health literature to identify research trends and support large-scale biomedical knowledge discovery.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">clinical collaboration</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">topic modeling</span></div>
+        <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--mid); max-width: 60ch">An understudied area in machine learning. I use topic modeling on the women's reproductive health literature to map research trends.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">literature mining</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: var(--mid); border: 1px solid var(--rule); padding: 4px 9px">topic modeling</span></div>
       </div>
 
     </div>
@@ -124,13 +122,35 @@
         <div style="max-width: 62ch">
           <div style="font-size: 16.5px; font-weight: 500; line-height: 1.45">AI-driven text mining of the female reproductive system: enabling multiscale biomedical modeling and personalized medicine</div>
           <div style="font-size: 15px; color: var(--mid); margin-top: 5px; line-height: 1.5">G Lee*, <strong style="font-weight: 600; color: var(--ink);">J Jeon*</strong>, SJ Ham*, et al.</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mid); margin-top: 5px; letter-spacing: 0.03em"><em style="font-style: italic">Nano Convergence(IF:13.8)</em></div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mid); margin-top: 5px; letter-spacing: 0.03em"><em style="font-style: italic">Nano Convergence (IF 13.8)</em></div>
           <div style="font-size: 13.5px; color: var(--mid); margin-top: 6px">* Equal contribution</div>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 6px">
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--mid)">—</span>
         <div style="font-size: 16.5px; color: var(--mid)">One medical imaging paper under review.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 168px 1fr; gap: 48px; padding: 40px 0; border-bottom: 1px solid var(--rule)">
+    <h2 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid)">Off the clock</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; max-width: 62ch">
+      <div style="display: flex; flex-direction: column; gap: 3px; padding-top: 12px; border-top: 1px dotted var(--rule)">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 16.5px; font-weight: 500"><span aria-hidden="true">🧗‍♀️</span>Climbing</div>
+        <div style="font-size: 15px; color: var(--mid); line-height: 1.5">My weekly reset — good for the head as much as the arms.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 3px; padding-top: 12px; border-top: 1px dotted var(--rule)">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 16.5px; font-weight: 500"><span aria-hidden="true">🚶‍♀️</span>Walking</div>
+        <div style="font-size: 15px; color: var(--mid); line-height: 1.5">Where most of my new ideas show up.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 3px; padding-top: 12px; border-top: 1px dotted var(--rule)">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 16.5px; font-weight: 500"><span aria-hidden="true">🍵</span>Tea</div>
+        <div style="font-size: 15px; color: var(--mid); line-height: 1.5">For sorting out my thoughts, and for the aroma.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 3px; padding-top: 12px; border-top: 1px dotted var(--rule)">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 16.5px; font-weight: 500"><span aria-hidden="true">📺</span>Dramas</div>
+        <div style="font-size: 15px; color: var(--mid); line-height: 1.5">Hooked on Chinese dramas — currently <em>Pursuit of Jade</em>.</div>
       </div>
     </div>
   </section>
@@ -148,28 +168,5 @@
   </section>
 
 </div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;oklch(0.53 0.16 32)&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;oklch(0.53 0.16 32)&quot;,&quot;oklch(0.5 0.13 250)&quot;,&quot;oklch(0.48 0.12 150)&quot;,&quot;oklch(0.21 0.008 60)&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;paperTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;warm&quot;,&quot;options&quot;:[&quot;neutral&quot;,&quot;warm&quot;,&quot;cool&quot;,&quot;dark&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
-class Component extends DCLogic {
-  applyTheme() {
-    const r = document.documentElement.style;
-    if (this.props.accentColor) r.setProperty("--accent", this.props.accentColor);
-    const tones = {
-      neutral: { paper: "oklch(0.985 0.004 85)", ink: "oklch(0.21 0.008 60)", mid: "oklch(0.42 0.006 60)", rule: "oklch(0.86 0.006 70)" },
-      warm:    { paper: "oklch(0.975 0.012 85)", ink: "oklch(0.20 0.010 60)", mid: "oklch(0.41 0.008 60)", rule: "oklch(0.85 0.012 75)" },
-      cool:    { paper: "oklch(0.985 0.006 250)", ink: "oklch(0.20 0.008 250)", mid: "oklch(0.41 0.008 250)", rule: "oklch(0.86 0.008 250)" },
-      dark:    { paper: "oklch(0.19 0.006 60)", ink: "oklch(0.94 0.006 80)", mid: "oklch(0.72 0.006 80)", rule: "oklch(0.32 0.008 70)" }
-    };
-    const t = tones[this.props.paperTone] || tones.neutral;
-    r.setProperty("--paper", t.paper); r.setProperty("--ink", t.ink);
-    r.setProperty("--mid", t.mid); r.setProperty("--rule", t.rule);
-  }
-  componentDidMount() { this.applyTheme(); }
-  componentDidUpdate() { this.applyTheme(); }
-  renderVals() { return {}; }
-}
-
-</script>
 </body>
 </html>
